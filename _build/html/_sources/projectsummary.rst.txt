@@ -1,0 +1,13 @@
+Project Summary
+===============
+
+This project is about creating documentation for a single python file from docstrings within the file.
+
+.. code-block:: python
+
+    def sayHello(customMessage=None):
+        """ Either prints hello world or a custom message
+        :type customMessage: string
+        :param customMessage: a string containing a custom message
+        :return: None
+        """

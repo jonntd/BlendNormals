@@ -1,0 +1,7 @@
+Modules
+=======
+
+*bm_copyNormals.py*
+
+.. automodule:: bm_copyNormals
+   :members:
