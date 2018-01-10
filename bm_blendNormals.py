@@ -1,10 +1,17 @@
-import maya.OpenMaya as om
+try:
+    import maya.OpenMaya as om
+except ImportError:
+    pass
 
 
-def copyNormals(sourceObject=None, targetObject=None, threshold=.01):
+def blendNormals(sourceObject=None, targetObject=None, threshold=.01):
     """
+
+    :type sourceObject: polygonal
     :param sourceObject: The polygon object to have the normals copied from
+    :type targetObject: polygonal
     :param targetObject: The polygon object to have its vertex normals set
+    :type threshold: float
     :param threshold: The minimum world space distance that considers vertices "on top" of each other
     :return: None
     """
@@ -78,4 +85,4 @@ def copyNormals(sourceObject=None, targetObject=None, threshold=.01):
         # set the vertex normal at that source vert's pair
         fnMeshB.setVertexNormal(vertNormal, vertPairs[vert], om.MSpace.kWorld)
 
-    # TODO: Not a seamless transition on high resolution meshes but still much better than before.
+        # TODO: Not a seamless transition on high resolution meshes but still much better than before.
